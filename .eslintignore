@@ -1,0 +1,33 @@
+gatsby-config.js
+gatsby-node.js
+gatsby-browser.js
+gatsby-ssr.js
+prettier.config.js
+
+# Build directories
+public/
+.cache/
+node_modules/
+
+# Generated files
+*.ico
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+
+# Temporary files
+generate-favicon.js
+create-y-favicon.js
+update-favicon.js
+generate-all-favicons.js
+generate-ico.js
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log

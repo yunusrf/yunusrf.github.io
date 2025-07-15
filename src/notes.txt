@@ -1,0 +1,20 @@
+Styled Technical Skills Table: A professionally styled table that matches your site's design theme with:
+
+Dark navy background with green accents
+Proper spacing and typography
+Responsive design that adapts to mobile screens
+Hover effects and proper visual hierarchy
+
+----
+Yunus Modifications
+
+- Implement ThemeProvider context with useTheme hook
+- Add smooth transitions between dark and light themes  
+- Create responsive theme toggle component with sun/moon icons
+- Update navigation to include theme toggle button
+- Add SSR support to prevent theme flashing
+- Include theme toggle in mobile menu
+- Fix ESLint issues and add proper PropTypes validation
+- Update color schemes for both dark and light modes
+- Position resume button correctly after Contact link
+- Remove unused generate-favicon.js file"
