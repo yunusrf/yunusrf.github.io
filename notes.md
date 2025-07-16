@@ -272,3 +272,58 @@ npm run build
 5. **Content is in markdown format in `/content/` folders**
 6. **Featured projects are in `/content/featured/` - currently includes Citc_qliksense and Online_fees_payment**
 7. **Removed SpotifyProfile, SpotifyProfileV2, and HalcyonTheme projects as requested**
+
+## 🧑‍💻 Developer & Maintainer Instructions
+
+### How to Compile the Code
+
+1. Install dependencies (if not done):
+   ```sh
+   npm install
+   ```
+2. Start the development server:
+   ```sh
+   npm start
+   # or
+   npm run develop
+   ```
+3. Build for production:
+   ```sh
+   npm run build
+   ```
+4. Preview the production build locally:
+   ```sh
+   npm run serve
+   ```
+
+### How to Handle Updates to the Website
+
+- Make your code/content changes in the appropriate files (e.g., `src/`, `content/`, etc.).
+- Run `npm run format` and `npm run lint:fix` to ensure code quality.
+- Test your changes locally using the development server (`npm start`) and production build (`npm run build` + `npm run serve`).
+- Commit and push your changes to the repository:
+  ```sh
+  git add .
+  git commit -m "Update: <describe your change>"
+  git push
+  ```
+
+### How to Redeploy to GitHub Pages
+
+1. Ensure the `homepage` field in `package.json` is set to your site URL (e.g., `"https://yunusrf.github.io/"`).
+2. Run the deploy command:
+   ```sh
+   npm run deploy
+   ```
+3. Wait a few minutes for GitHub Pages to update. Your site will be live at your URL.
+
+#### Troubleshooting Deployment
+
+- If the site does not update, check the GitHub Pages settings in your repository (Settings > Pages).
+- Make sure the source is set to the `gh-pages` branch and root folder.
+- If you see a 404 or blank page, clear your browser cache or try in Incognito mode.
+- Check the `gh-pages` branch for the correct build output.
+
+---
+
+These instructions are for any developer or maintainer working on this Gatsby-based personal website deployed to GitHub Pages. For further help, refer to the official Gatsby and GitHub Pages documentation.
