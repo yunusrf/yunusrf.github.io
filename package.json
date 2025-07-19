@@ -12,6 +12,7 @@
   ],
   "license": "MIT",
   "browserslist": "> 0.25%, not dead",
+  "homepage": "https://yunusrf.github.io/",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
