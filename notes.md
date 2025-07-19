@@ -273,6 +273,91 @@ npm run build
 6. **Featured projects are in `/content/featured/` - currently includes Citc_qliksense and Online_fees_payment**
 7. **Removed SpotifyProfile, SpotifyProfileV2, and HalcyonTheme projects as requested**
 
+## 🚀 Automating Deployment with GitHub Actions
+
+You can automate deployment to GitHub Pages using GitHub Actions. This will build and deploy your Gatsby site to the `gh-pages` branch on every push to the `main` branch.
+
+### 1. Create a Personal Access Token (Classic)
+
+1. Log in to your GitHub account.
+2. Click your profile picture (top right) → **Settings**.
+3. In the left sidebar, scroll down and look for **Developer settings** (sometimes at the very bottom).
+4. Under **Developer settings**, you should see **Personal access tokens** (expand for “Tokens (classic)” and “Fine-grained tokens”).
+5. Click **Tokens (classic)** or **Fine-grained tokens**.
+6. Click **Generate new token** and follow the prompts.
+
+If you do not see “Developer settings” or “Personal access tokens”, try searching for “Personal access tokens” in the search bar at the top of the Settings page. GitHub may move or rename this section, but it is always under your personal account’s settings, not repository or organization settings.
+
+If you still cannot find it, you may be on a managed enterprise account or GitHub has changed the UI again. In that case, refer to the official GitHub documentation: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token 2. Click **Generate new token (classic)**. 3. Give it a name (e.g., `gh-pages-deploy`), set an expiration, and select the `repo` scope. 4. Copy the token (you will use it as a secret in the next step).
+
+### 2. Add the Token as a Repository Secret
+
+1. Go to your repository on GitHub.
+2. Click **Settings > Secrets and variables > Actions > New repository secret**.
+3. Name the secret `GH_PAGES_DEPLOY_TOKEN` and paste your token as the value.
+
+### 3. Add the GitHub Actions Workflow File
+
+1. In your project root, create a folder: `.github/workflows/`
+2. Inside that folder, create a file named `deploy.yml` with the following content:
+
+```yaml
+name: Deploy Gatsby to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Gatsby site
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          cname: ''
+```
+
+**Notes:**
+
+- This workflow will run on every push to the `main` branch.
+- It uses the `peaceiris/actions-gh-pages` action to deploy the contents of the `public` folder to the `gh-pages` branch.
+- The `GH_PAGES_DEPLOY_TOKEN` secret is used for authentication.
+- If you use a custom domain, set the `cname` value accordingly (otherwise leave it as '').
+
+### 4. Commit and Push the Workflow
+
+```sh
+git add .github/workflows/deploy.yml
+git commit -m "Add GitHub Actions workflow for automatic deployment"
+git push
+```
+
+### 5. Verify Deployment
+
+- After pushing, go to the **Actions** tab in your repository to monitor the workflow run.
+- If successful, your site will be automatically deployed to GitHub Pages.
+
+---
+
 ## 🧑‍💻 Developer & Maintainer Instructions
 
 ### How to Compile the Code
