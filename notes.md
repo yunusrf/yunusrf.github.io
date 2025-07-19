@@ -395,6 +395,27 @@ git push
 
 ### How to Redeploy to GitHub Pages
 
+#### If prompted for a GitHub username and password when running `npm run deploy`:
+
+1. **Do not use your GitHub password.** Instead, use a GitHub Personal Access Token (PAT).
+2. To generate a token:
+   - Go to GitHub > Settings > Developer settings > Personal access tokens.
+   - Click "Generate new token" and select the `repo` scope.
+   - Copy the token (you will use it as your password).
+3. When prompted for a username, enter your GitHub username (e.g., `yunusrf`).
+4. When prompted for a password, paste your personal access token.
+
+**Tip:**
+
+- You can set the token in your environment for one-time use:
+  ```sh
+  export GH_TOKEN=your_personal_access_token
+  npm run deploy
+  ```
+- Or, set up SSH keys for your GitHub account and use the SSH URL in your repository for passwordless deploys.
+
+For more details, see: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
 1. Ensure the `homepage` field in `package.json` is set to your site URL (e.g., `"https://yunusrf.github.io/"`).
 2. Run the deploy command:
    ```sh

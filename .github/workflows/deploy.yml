@@ -1,16 +1,12 @@
-name: Deploy Gatsby to GitHub Pages - Yunus
-
-on:
-  push:
-    branches:
-      - main
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential python3 g++ make
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
