@@ -427,7 +427,7 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
+      <h2 ref={revealTitle}>Highlighted Additional Projects | Supplementary Project Portfolio</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         View Archive

@@ -3,8 +3,7 @@ date: '2'
 title: 'Layfootak - Mobile Wallet & NFC Payment App'
 cover: './layfootak.png'
 # github: 'https://github.com/yunusparvej/layfootak-ios'
-# external: 'https://itunes.apple.com/sa/app/layfwtk-ttbyq-al-rwd-alhsryt/id1159274114'
-appstore: 'https://itunes.apple.com/sa/app/layfwtk-ttbyq-al-rwd-alhsryt/id1159274114'
+external: 'https://itunes.apple.com/sa/app/layfwtk-ttbyq-al-rwd-alhsryt/id1159274114'
 tech:
   - Swift
   - Objective-C

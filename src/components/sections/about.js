@@ -276,7 +276,6 @@ const About = () => {
               design, with a strong focus on native mobile application development, backend and
               infrastructure solutions, as well as desktop and web development.
             </p>
-
             <p>
               I have a solid background in data analysis, predictive modeling, and data
               visualization, utilizing machine learning and deep learning techniques to drive
@@ -295,6 +294,16 @@ const About = () => {
               initiatives. My experience includes analyzing and interpreting research data, as well
               as preparing reports, publications, and presentations to effectively share findings
               with diverse audiences.
+            </p>
+            <p>
+              My key technical and training competencies include instructor-led and virtual delivery
+              for corporate and professional audiences, conducting needs assessments and skills gap
+              analyses, and applying adult learning methodologies in technical workshops. I have
+              extensive experience in technical leadership and team mentoring, designing and
+              delivering hands-on labs, simulations, and assessments, and utilizing blended learning
+              and eLearning tools. Additionally, I provide training in data analytics, business
+              intelligence, and predictive modeling, as well as instruction in embedded, mobile, and
+              cloud technologies.
             </p>
           </div>
 
